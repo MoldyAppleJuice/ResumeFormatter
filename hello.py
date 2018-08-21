@@ -7,4 +7,8 @@ def survey():
 
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
+    for key, value in request.form.items():
+        print(key, ":", value)
+    if ("address2" in request.form):
+        print("address2 in request.form")
     return render_template("result.html", result=request.form)
