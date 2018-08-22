@@ -9,6 +9,8 @@ def survey():
 def result():
     for key, value in request.form.items():
         print(key, ":", value)
-    if ("address2" in request.form):
-        print("address2 in request.form")
+    #print(request.form)
     return render_template("result.html", result=request.form)
+
+if __name__ == '__main__':
+   app.run(debug = True)
