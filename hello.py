@@ -11,9 +11,10 @@ def result():
         print(key, ":", value)
 
     key_list = list(request.form.keys())
+    name = request.form["firstname"] + " " + request.form["lastname"]
     #personal info is a dictionary containing all the personal info of the person
     personal_info = {}
-    for i in range(10):
+    for i in range(2, 10):
         putInDict(personal_info, request.form, key_list[i])
     print(personal_info)
 
@@ -49,7 +50,7 @@ def result():
     act_info = [act_1]
     print(act_info)
 
-    return render_template("result.html", result=request.form)
+    return render_template("result.html", name=name, personal_info=personal_info, edu_info=edu_info, job_info=job_info, act_info=act_info)
 
 def putInDict(newDict, oldDict, key):
     newDict[key] = oldDict[key]

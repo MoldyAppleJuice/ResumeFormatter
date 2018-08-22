@@ -2,18 +2,60 @@
 <html>
    <body>
 
-      {#<table border = 1>
-         {% for key, value in result.items() %}
+     <h1> {{ name }} </h1>
+     <table border=1>
+       {% for key, value in personal_info.items() %}
+          <tr>
+            {#<p><strong>{{ key }}:</strong> {{ value }}</p>#}
+            <th> {{ key }} </th>
+            <td> {{ value }} </td>
+          </tr>
+        {% endfor %}
+      </table>
 
-            <tr>
-               <th> {{ key }} </th>
-               <td> {{ value }} </td>
-            </tr>
+      <h2>Education</h2>
+      {% for edu_spec in edu_info %}
+      <table border = 1>
+          {% for key, value in edu_spec.items() %}
 
+             <tr>
+                <th> {{ key }} </th>
+                <td> {{ value }} </td>
+             </tr>
+
+          {% endfor %}
+       </table>
+       {% endfor %}
+
+       <h2>Experience</h2>
+       {% for job_spec in job_info %}
+       <table border = 1>
+           {% for key, value in job_spec.items() %}
+
+              <tr>
+                 <th> {{ key }} </th>
+                 <td> {{ value }} </td>
+              </tr>
+
+           {% endfor %}
+        </table>
+        {% endfor %}
+
+        <h2>Leadership</h2>
+        {% for act_spec in act_info %}
+        <table border = 1>
+            {% for key, value in act_spec.items() %}
+
+               <tr>
+                  <th> {{ key }} </th>
+                  <td> {{ value }} </td>
+               </tr>
+
+            {% endfor %}
+         </table>
          {% endfor %}
-      </table>#}
 
-    <h1> {{ result["firstname"] }} {{ result["lastname"] }}</h1>
+    {#<h1> {{ result["firstname"] }} {{ result["lastname"] }}</h1>
 
     <h2> Information </h2>
     <p> {{ result["email"] }} </p>
@@ -45,6 +87,6 @@
     <p> {{ result["position_title"] }} </p>
     <p> {{ result["activity_location"] }}</p>
     <p> {{ result["activity_start_month"] }} {{ result["activity_start_year"] }} - {{ result["activity_end_month"] }} {{ result["activity_end_year"] }}</p>
-
+    #}
    </body>
 </html>
