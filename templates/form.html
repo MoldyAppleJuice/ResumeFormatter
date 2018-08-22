@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
-<script src="{{url_for('static', filename='main.js')}}"></script>
+<!-- <link rel="stylesheet" href="style.css"> -->
+<script src="{{url_for('static', filename='main3.js')}}"></script>
 </head>
 <body>
 <form action="{{url_for('result')}}" method = "POST">
-
+  <button onclick="fillForm()">Fill form with test data</button>
   <h1>Personal Information</h1>
   <strong>First name*</strong>
-  <input type="text" name="firstname" maxlength="30" required value="John">
+  <input type="text" name="firstname" id="firstname" maxlength="30" required>
   <br>
   <br>
   <strong>Last name*</strong>
-  <input type="text" name="lastname" maxlength="30" required value="Doe">
+  <input type="text" name="lastname" id="lastname" maxlength="30" required>
   <br>
   <br>
   <strong>Email*</strong>
-  <input type="email" placeholder="email@example.com" name="email" required value="johndoe@example.com">
+  <input type="email" placeholder="email@example.com" name="email" id="email" required>
   <br>
   <br>
   <strong>Phone Number*</strong>
-  <input type="tel" name="phone" maxlength="15" required value="123-456-7890">
+  <input type="tel" name="phone" id="phone" maxlength="15" required>
   <br>
   <br>
   <h2>Current Address</h2>
   <strong>Address Line 1*</strong>
-  <input type="text" name="address1" maxlength="30" required value="606-3727 Ullamcorper. Street">
+  <input type="text" name="address1" id="address1" maxlength="30" required>
   <br>
   <br>
   <strong>Address Line 2 </strong>
-  <input type="text" name="address2" maxlength="30" value="address line 2">
+  <input type="text" name="address2" maxlength="30">
   <br>
   <br>
   <strong>City/Town*</strong>
-  <input type="text" name="home_city" required value="Roseville">
+  <input type="text" name="home_city" id="home_city" required>
   <br>
   <br>
   <strong>State/Providence/Region*</strong>
-  <input type="text" name="home_state" required value="NH">
+  <input type="text" name="home_state" id="home_state" required>
   <br>
   <br>
   <strong>Zip Code/Postal Code*</strong>
-  <input type="text" name="zip" required value="11523">
+  <input type="text" name="zip" id="zip" required>
   <br>
   <br>
   <strong>Country*</strong>
-  <select name="country" required>
-    <!-- <option value="" selected="selected">(please select a country)</option> -->
+  <select name="country" id="country" required>
+    <option value="" selected="selected">(please select a country)</option>
     <option value="AF">Afghanistan</option>
     <option value="AL">Albania</option>
     <option value="DZ">Algeria</option>
@@ -272,7 +272,7 @@
     <option value="UA">Ukraine</option>
     <option value="AE">United Arab Emirates</option>
     <option value="GB">United Kingdom</option>
-    <option value="US" selected="selected">United States</option>
+    <option value="US">United States</option>
     <option value="UM">United States Minor Outlying Islands</option>
     <option value="UY">Uruguay</option>
     <option value="UZ">Uzbekistan</option>
@@ -293,11 +293,11 @@
 
 <h1>Education</h1>
   <strong>School*</strong>
-  <input type="text" name="school" maxlength="40" required>
+  <input type="text" name="school" id="school_name_1" maxlength="40" required>
   <br>
   <br>
   <strong>Level of Education*</strong>
-  <select name="level" required>
+  <select name="level" id="level" required>
     <option value="Elementary">Elementary</option>
     <option value="Secondary">Secondary</option>
     <option value="Bachelors">Bachelors</option>
@@ -307,26 +307,26 @@
   <br>
   <br>
   <strong>City/Town*</strong>
-  <input type="text" name="school_city" required>
+  <input type="text" name="school_city" id="school_city" required>
   <br>
   <br>
   <strong>State/Providence/Region*</strong>
-  <input type="text" name="school_state" required>
+  <input type="text" name="school_state" id="school_state" required>
   <br>
   <br>
   <strong>Graduation Date*</strong>
-  <input type="date" name="grad_date1">
+  <input type="date" name="grad_date1" id="grad_date1">
   <br>
   <br>
 
   <div id="school"  style="display:none;" >
   <br>
   <strong>School*</strong>
-  <input type="text" name="school2" maxlength="40">
+  <input type="text" name="school2" id="school2" maxlength="40">
   <br>
   <br>
   <strong>Level of Education*</strong>
-  <select name="level2">
+  <select name="level2" id="level2">
     <option value="Elementary">Elementary</option>
     <option value="Secondary">Secondary</option>
     <option value="Bachelors">Bachelors</option>
@@ -354,24 +354,24 @@
 
   <h1>Experience</h1>
   <strong>Job Title*</strong>
-  <input type="text" name="job_title" maxlength="30" required>
+  <input type="text" name="job_title" id="job_title" maxlength="30" required>
   <br>
   <br>
   <strong>Job Location*</strong>
-  <input type="text" name="job_location" maxlength="30" required>
+  <input type="text" name="job_location" id="job_location" maxlength="30" required>
   <br>
   <br>
   <strong>Job Start Date*</strong>
-  <input type="date" name="job_start1" required>
+  <input type="date" name="job_start1" id="job_start1" required>
   <br>
   <br>
   <strong>Job End Date*</strong>
-  <input type="date" name="job_end1" required>
+  <input type="date" name="job_end1" id="job_end1" required>
   <br>
   <br>
   <strong>Job Description*</strong>
   <br>
-  <textarea rows="4" cols="50" name="job_description" form="usrform" maxlength="600" required>
+  <textarea rows="4" cols="50" name="job_description" id="job_description" form="usrform" maxlength="600" required>
 Enter job description here...</textarea>
   <br>
   <br>
@@ -404,31 +404,31 @@ Enter job description here...</textarea>
   <button type="button" onclick="showDiv('job')">Add Job Experience</button>
   <br>
   <br>
-  
+
  <h1>Leadership/Activites</h1>
   <strong>Activity Title*</strong>
-  <input type="text" name="activity_title" maxlength="30" required>
+  <input type="text" name="activity_title" id="activity_title" maxlength="30" required>
   <br>
   <br>
   <strong>Position Title*</strong>
-  <input type="text" name="position_title" maxlength="30" required>
+  <input type="text" name="position_title" id="position_title" maxlength="30" required>
   <br>
   <br>
   <strong>Activity Location*</strong>
-  <input type="text" name="activity_location" maxlength="30" required>
+  <input type="text" name="activity_location" id="activity_location" maxlength="30" required>
   <br>
   <br>
   <strong>Activity Start Date*</strong>
-  <input type="date" name="activity_start1" required>
+  <input type="date" name="activity_start1" id="activity_start1" required>
   <br>
   <br>
   <strong>Activity End Date*</strong>
-  <input type="date" name="activity_end1" required>
+  <input type="date" name="activity_end1" id="activity_end1" required>
   <br>
   <br>
   <strong>Activity Description*</strong>
   <br>
-  <textarea rows="4" cols="50" name="activity_description" form="usrform" maxlength="600" required>
+  <textarea rows="4" cols="50" name="activity_description" id="activity_description" form="usrform" maxlength="600" required>
 Enter activity description here...</textarea>
   <br>
   <br>
@@ -475,6 +475,7 @@ Enter activity description here...</textarea>
   <br>
   <input type="submit" value="Submit">
 </form>
+
 
 </body>
 </html>
