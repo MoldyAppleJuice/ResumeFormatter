@@ -2,91 +2,60 @@
 <html>
    <body>
 
-     <h1> {{ name }} </h1>
-     <table border=1>
-       {% for key, value in personal_info.items() %}
-          <tr>
-            {#<p><strong>{{ key }}:</strong> {{ value }}</p>#}
+<h1> {{ name }} </h1>
+<table border=1>
+  {% for key, value in personal_info.items() %}
+     <tr>
+       {#<p><strong>{{ key }}:</strong> {{ value }}</p>#}
+       <th> {{ key }} </th>
+       <td> {{ value }} </td>
+     </tr>
+   {% endfor %}
+ </table>
+
+ <h2>Education</h2>
+ {% for edu_spec in edu_info %}
+ <table border = 1>
+     {% for key, value in edu_spec.items() %}
+
+        <tr>
+           <th> {{ key }} </th>
+           <td> {{ value }} </td>
+        </tr>
+
+     {% endfor %}
+  </table>
+  {% endfor %}
+
+  <h2>Experience</h2>
+  {% for job_spec in job_info %}
+  <table border = 1>
+      {% for key, value in job_spec.items() %}
+
+         <tr>
             <th> {{ key }} </th>
             <td> {{ value }} </td>
+         </tr>
+
+      {% endfor %}
+   </table>
+   {% endfor %}
+
+   <h2>Leadership</h2>
+   {% for act_spec in act_info %}
+   <table border = 1>
+       {% for key, value in act_spec.items() %}
+
+          <tr>
+             <th> {{ key }} </th>
+             <td> {{ value }} </td>
           </tr>
-        {% endfor %}
-      </table>
 
-      <h2>Education</h2>
-      {% for edu_spec in edu_info %}
-      <table border = 1>
-          {% for key, value in edu_spec.items() %}
-
-             <tr>
-                <th> {{ key }} </th>
-                <td> {{ value }} </td>
-             </tr>
-
-          {% endfor %}
-       </table>
        {% endfor %}
+    </table>
+    {% endfor %}
 
-       <h2>Experience</h2>
-       {% for job_spec in job_info %}
-       <table border = 1>
-           {% for key, value in job_spec.items() %}
 
-              <tr>
-                 <th> {{ key }} </th>
-                 <td> {{ value }} </td>
-              </tr>
 
-           {% endfor %}
-        </table>
-        {% endfor %}
-
-        <h2>Leadership</h2>
-        {% for act_spec in act_info %}
-        <table border = 1>
-            {% for key, value in act_spec.items() %}
-
-               <tr>
-                  <th> {{ key }} </th>
-                  <td> {{ value }} </td>
-               </tr>
-
-            {% endfor %}
-         </table>
-         {% endfor %}
-
-    {#<h1> {{ result["firstname"] }} {{ result["lastname"] }}</h1>
-
-    <h2> Information </h2>
-    <p> {{ result["email"] }} </p>
-    <p> {{ result["phone"] }} </p>
-    <p> {{ result["address1"] }} </p>
-    <p> {{ result["address2"] }} </p>
-    <p> {{ result["home_city"] }} {{ result["home_state"] }} {{ result["zip"] }} {{ result["country"] }}</p>
-
-    <h2> Education </h2>
-    <h3> {{ result["school"] }} </h3>
-    <p> {{ result["level"] }} </p>
-    <p> {{ result["school_city"] }}, {{ result["school_state"] }}</p>
-    <p> {{ result["grad_month"] }} {{ result["grad_year"] }} </p>
-    <h3> {{ result["school2"] }} </h3>
-    <p> {{ result["level2"] }} </p>
-    <p> {{ result["school_city2"] }}, {{ result["school_state2"] }}</p>
-    <p> {{ result["grad_month2"] }} {{ result["grad_year2"] }} </p>
-
-    <h2> Job Experience </h2>
-    <h3> {{ result["job_title"] }} </h3>
-    <p> {{ result["job_location"] }} </p>
-    <p> {{ result["job_start_month"] }} - {{ result["job_end_year"] }}</p>
-    <h3> {{ result["job_title2"] }} </h3>
-    <p> {{ result["job_location2"] }} </p>
-    <p> {{ result["job_start_month2"] }} - {{ result["job_end_year2"] }}</p>
-
-    <h2> Activity </h2>
-    <h3> {{ result["activity_title"] }} </h3>
-    <p> {{ result["position_title"] }} </p>
-    <p> {{ result["activity_location"] }}</p>
-    <p> {{ result["activity_start_month"] }} {{ result["activity_start_year"] }} - {{ result["activity_end_month"] }} {{ result["activity_end_year"] }}</p>
-    #}
    </body>
 </html>

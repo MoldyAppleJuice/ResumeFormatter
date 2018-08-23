@@ -2,7 +2,9 @@
 <html>
 <head>
 <!-- <link rel="stylesheet" href="style.css"> -->
+<script src="../static/main3.js"></script>
 <script src="{{url_for('static', filename='main3.js')}}"></script>
+
 </head>
 <body>
 <form action="{{url_for('result')}}" method = "POST">
@@ -371,7 +373,7 @@
   <br>
   <strong>Job Description*</strong>
   <br>
-  <textarea rows="4" cols="50" name="job_description" id="job_description" form="usrform" maxlength="600" required>
+  <textarea rows="4" cols="50" name="job_description" id="job_description" maxlength="600" required>
 Enter job description here...</textarea>
   <br>
   <br>
@@ -396,7 +398,7 @@ Enter job description here...</textarea>
   <br>
   <strong>Job Description*</strong>
   <br>
-  <textarea rows="4" cols="50" name="job_description2" form="usrform" maxlength="600">
+  <textarea rows="4" cols="50" name="job_description2" maxlength="600">
 Enter job description here...</textarea>
   <br>
   <br>
@@ -428,7 +430,7 @@ Enter job description here...</textarea>
   <br>
   <strong>Activity Description*</strong>
   <br>
-  <textarea rows="4" cols="50" name="activity_description" id="activity_description" form="usrform" maxlength="600" required>
+  <textarea rows="4" cols="50" name="activity_description" id="activity_description" maxlength="600" required>
 Enter activity description here...</textarea>
   <br>
   <br>
@@ -457,7 +459,7 @@ Enter activity description here...</textarea>
   <br>
   <strong>Activity Description*</strong>
   <br>
-  <textarea rows="4" cols="50" name="activity_description" form="usrform" maxlength="600">
+  <textarea rows="4" cols="50" name="activity_description2" maxlength="600">
 Enter activity description here...</textarea>
   <br>
   <br>
