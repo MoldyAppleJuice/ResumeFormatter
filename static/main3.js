@@ -17,19 +17,19 @@ function fillForm() {
   fill("level", "Secondary");
   fill("school_city", "New York");
   fill("school_state", "New York");
-  fill("grad_date1", "2018-08-22");
+  fill("grad_date1", "2018-08");
 
   fill("job_title", "Chief Executive Janitor");
   fill("job_location", "Janitors Association Inc.");
-  fill("job_start1", "2018-08-22");
-  fill("job_end1", "2018-08-22");
+  fill("job_start1", "2018-08");
+  fill("job_end1", "2018-08");
   fill("job_description", "The best janitor");
 
   fill("activity_title", "Young Janitors of America");
   fill("position_title", "President");
   fill("activity_location", "College");
-  fill("activity_start1", "2018-08-22");
-  fill("activity_end1", "2018-08-22");
+  fill("activity_start1", "2018-08");
+  fill("activity_end1", "2018-08");
   fill("activity_description", "I led young janitors");
 }
 
