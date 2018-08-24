@@ -12,6 +12,8 @@ def result():
         print(count, key, ":", value)
         count += 1
 
+
+
     key_list = list(request.form.keys())
     name = request.form["firstname"] + " " + request.form["lastname"]
     #personal info is a dictionary containing all the personal info of the person
