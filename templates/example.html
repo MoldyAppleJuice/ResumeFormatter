@@ -1,1 +1,22 @@
-html docs go here
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="../static/example.js"></script>
+  <script src="{{url_for('static', filename='example.js')}}"></script>
+</head>
+
+<body>
+  <div id="personal">
+    <h1>Personal</h1>
+  </div>
+
+  <button onclick="addSection()">Add Personal Section</button>
+
+  <div id="education">
+  </div>
+
+  <div id="experience">
+  </div>
+</body>
+
+</html>
