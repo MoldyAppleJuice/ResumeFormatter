@@ -47,6 +47,12 @@ function addQuestion(section, qLabel, qID, qiType) {
   makeBreak(section);
 }
 
+/* function to get the basic attributes of a question type
+ * params:
+ *   qType: string representing the question type
+ * returns:
+ *   an object representing the basic attributes of the question
+ */
 function getAttributes(qType) {
   if (qType == "text") {
     return {"qType":"INPUT", "type":"text"};
@@ -91,14 +97,7 @@ var personal = {
   "labels":['First name* ', 'Last name* ', 'Email* ', 'Phone Number* ', 'Address Line 1* ',
                 'Address Line 2* ', 'City* ', 'State* ', 'Zip* ', 'Country* ',],
   "qTypes":["text", "text", "email", "text", "text", "text", "text", "text", "text", "list"],
-  "list_info":{" ":"(please select a country)",
-               "AF":"Afghanistan",
-               "AL":"Albania",
-               "DZ":"Algeria",
-               "AS":"American Samoa",
-               "AD":"Andorra",
-               "AO":"Angola",
-               "AI":"Anguilla"},
+  "list_info":{" ":"(please select a country)"},
   "count":0
 };
 
@@ -141,6 +140,10 @@ function addSection(section) {
   var qType = section["qTypes"];
   var list_info = section["list_info"];
   var count = section["count"]++;
+
+  if (count >= 1) {
+    makeBreak(section["name"]);
+  }
 
   for (var i=0; i<qType.length; i++) {
     if (qType[i] == "list") {
