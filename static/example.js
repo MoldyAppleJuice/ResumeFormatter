@@ -36,6 +36,8 @@ function addQuestion(section, qLabel, qID, qiType) {
 
   //create the HTML element using Javascript
   var inNode = document.createElement(attributes["qType"]);
+  //delete qType so it isn't part of HTML element
+  delete attributes.qType;
 
   //loop through the dictionary to apply attributes to the question
   for (var key in attributes) {
@@ -43,6 +45,7 @@ function addQuestion(section, qLabel, qID, qiType) {
   }
   //place element on HTML page
   document.getElementById(section).appendChild(inNode);
+  document.getElementById(qID).required = true;
 
   makeBreak(section);
 }
@@ -86,6 +89,8 @@ function addListQuestion(section, qLabel, qID, options) {
     option.appendChild(text);
     document.getElementById(qID).appendChild(option);
   }
+
+  document.getElementById(qID).required = true;
 
   makeBreak(section);
 }

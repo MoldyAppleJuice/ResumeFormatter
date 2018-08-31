@@ -25,9 +25,13 @@
   </div>
   <button onclick="addSection(activity)">Add Activity</button>
 
+  <!-- Script srcs for testing without a server -->
   <script src="../static/example.js"></script>
   <script src="../static/countries.js"></script>
+
+  <!-- Script srcs for testing with a server -->
   <script src="{{url_for('static', filename='example.js')}}"></script>
+  <script src="{{url_for('static', filename='countries.js')}}"></script>
 </body>
 
 </html>
