@@ -2,15 +2,53 @@
 <html>
    <body>
 
-     <table border=1>
-       {% for key, value in result.items() %}
-          <tr>
-            <th> {{ key }} </th>
-            <td> {{ value }} </td>
-          </tr>
-        {% endfor %}
-      </table>
+     <h1>Personal</h1>
+     {% for d in personal %}
+       <table border=1>
+         {% for key, value in d.items() %}
+            <tr>
+              <th> {{ key }} </th>
+              <td> {{ value }} </td>
+            </tr>
+          {% endfor %}
+        </table>
+      {% endfor %}
 
+      <h1>Education</h1>
+      {% for d in edu %}
+        <table border=1>
+          {% for key, value in d.items() %}
+             <tr>
+               <th> {{ key }} </th>
+               <td> {{ value }} </td>
+             </tr>
+           {% endfor %}
+         </table>
+       {% endfor %}
+
+       <h1>Experience</h1>
+       {% for d in job %}
+         <table border=1>
+           {% for key, value in d.items() %}
+              <tr>
+                <th> {{ key }} </th>
+                <td> {{ value }} </td>
+              </tr>
+            {% endfor %}
+          </table>
+        {% endfor %}
+
+        <h1>Extracurriculars</h1>
+        {% for d in act %}
+          <table border=1>
+            {% for key, value in d.items() %}
+               <tr>
+                 <th> {{ key }} </th>
+                 <td> {{ value }} </td>
+               </tr>
+             {% endfor %}
+           </table>
+         {% endfor %}
 
 
    </body>
