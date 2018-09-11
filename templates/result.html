@@ -2,53 +2,37 @@
 <html>
    <body>
 
-     <h1>Personal</h1>
+     <h1>{{name}}</h1>
+
+     <h1>Contact</h1>
      {% for d in personal %}
-       <table border=1>
-         {% for key, value in d.items() %}
-            <tr>
-              <th> {{ key }} </th>
-              <td> {{ value }} </td>
-            </tr>
-          {% endfor %}
-        </table>
-      {% endfor %}
+         <p>Email: {{d["personal_email"]}}</p>
+         <p>Number: {{d["personal_number"]}}</p>
+         <p>Address: {{d["personal_address1"]}}<br>{{d["personal_address2"]}}<br>{{d["personal_city"]}} {{d["personal_state"]}} {{d["personal_zip"]}}, {{d["personal_country"]}}</p>
+     {% endfor %}
 
-      <h1>Education</h1>
-      {% for d in edu %}
-        <table border=1>
-          {% for key, value in d.items() %}
-             <tr>
-               <th> {{ key }} </th>
-               <td> {{ value }} </td>
-             </tr>
-           {% endfor %}
-         </table>
-       {% endfor %}
+     <h1>Education</h1>
+     {% for d in edu %}
+         <p>{{d["edu_name"]}} | {{d["edu_level"]}}, {{d["edu_grad_date"]}}</p>
+         <p>{{d["edu_city"]}}, {{d["edu_state"]}}</p>
+         <br><br>
+     {% endfor %}
 
-       <h1>Experience</h1>
-       {% for d in job %}
-         <table border=1>
-           {% for key, value in d.items() %}
-              <tr>
-                <th> {{ key }} </th>
-                <td> {{ value }} </td>
-              </tr>
-            {% endfor %}
-          </table>
-        {% endfor %}
+     <h1>Experience</h1>
+     {% for d in job %}
+         <p>{{d["job_company"]}} | {{d["job_title"]}}</p>
+         <p>{{d["job_location"]}}, {{d["job_start_date"]}} - {{d["job_end_date"]}}</p>
+         <p>{{d["job_description"]}}</p>
+         <br><br>
+     {% endfor %}
 
-        <h1>Extracurriculars</h1>
-        {% for d in act %}
-          <table border=1>
-            {% for key, value in d.items() %}
-               <tr>
-                 <th> {{ key }} </th>
-                 <td> {{ value }} </td>
-               </tr>
-             {% endfor %}
-           </table>
-         {% endfor %}
+     <h1>Extracurriculars</h1>
+     {% for d in act %}
+         <p>{{d["act_name"]}} | {{d["act_title"]}}</p>
+         <p>{{d["act_location"]}}, {{d["act_start_date"]}} - {{d["act_end_date"]}}</p>
+         <p>{{d["act_description"]}}</p>
+         <br><br>
+     {% endfor %}
 
 
    </body>

@@ -12,7 +12,9 @@ def result():
     job = dictChunk(getSet(request.form, "job"), [{}])
     act = dictChunk(getSet(request.form, "act"), [{}])
 
-    return render_template("result.html", personal=personal, edu=edu, job=job, act=act)
+    name = (personal[0])["personal_firstname"] + " " + (personal[0])["personal_lastname"]
+
+    return render_template("result.html", name=name, personal=personal, edu=edu, job=job, act=act)
 
 '''function that returns a dictionary that matches to a set
    params:
@@ -26,6 +28,7 @@ def getSet(results, qID):
   for key in results:
     if key.split("_")[0] == qID:
       new_dict[key] = results[key]
+      #del results[key]
   return new_dict
 
 '''function that returns a list of dictionaries without unique id keys
